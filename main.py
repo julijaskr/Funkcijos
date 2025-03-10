@@ -1,5 +1,9 @@
 import math
 import random
+import re
+import string
+
+
 #
 #
 # def print_list_col(arr):
@@ -193,6 +197,39 @@ print(uzkoduotas_sakinys)
 # Parašykite funkciją, kurios argumentas būtų tekstas, kuris būtų atspausdinamas konsolėje pridedant “---” pradžioje ir gale. PVZ (---labas---)
 tekstas = "labas"
 def konsoleje(tekstas):
-
     print(f'---{tekstas}---')
 konsoleje(tekstas)
+
+# Sugeneruokite atsitiktinį stringą iš raidžių ir skaičių (10 simbolių). Atspausdinkite simbolius stulpeliu. Jei tai skaičius apgaubkite “ [ 7 ]”. Jei skaičiai eina keli iš eilės, apgaubkite juos kartu. [75]. (apačioje yra funkcija, ją nusikopijuokite ir paleiskite, ji sugeneruos stringą, su kuriuo dirbsite)
+import random
+import re
+
+# Funkcija atsitiktinio stringo generavimui
+def generateRndStr(length):
+    symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890"
+    text = ""
+    for i in range(length):
+        text += symbols[random.randint(0, len(symbols) - 1)]
+    return text
+
+# Funkcija skaičių apgaubimui laužtiniais skliaustais
+def apgaubti_skaicius(tekstas):
+    return re.sub(r'(\d+)', r'[\1]', tekstas)  # Suranda skaičius ir apgaubia [ ]
+
+# Generuojame stringą
+atsitiktinis_stringas = generateRndStr(10)
+uzkoduotas_stringas = apgaubti_skaicius(atsitiktinis_stringas)
+
+# Atspausdiname simbolius stulpeliu
+i = 0
+while i < len(uzkoduotas_stringas):
+    if uzkoduotas_stringas[i] == '[':  # Jei prasideda skaičių grupė
+        sk_bloskas = ''
+        while i < len(uzkoduotas_stringas) and uzkoduotas_stringas[i] != ']':
+            sk_bloskas += uzkoduotas_stringas[i]
+            i += 1
+        sk_bloskas += ']'  # Pridedame uždarymo skliaustą
+        print(sk_bloskas)
+    else:
+        print(uzkoduotas_stringas[i])  # Spausdiname simbolį
+    i += 1
