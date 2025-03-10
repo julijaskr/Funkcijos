@@ -88,8 +88,6 @@ import random
 # initials = make_initials(vardas, pavarde)
 
 # print(initials)
-
-
 def make_junginys(sk_1, sk_2):
     return int(sk_1) + int(sk_2)
 sk_1 = "15"
@@ -99,7 +97,6 @@ junginys = make_junginys(sk_1, sk_2)
 print(junginys)
 
 # Sukurkite Funkciją kuri vadinasi PISq. Funkcija gražina float tipo reikšmę. Reikšmė yra : 9.8596; Gautą reikšmę atspausdinkite.
-
 def generateRndStr(length):
   symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890"
   text = ""
@@ -110,7 +107,6 @@ random_1 = generateRndStr(10)
 print(random_1)
 
 # Sukurkite Funkciją kuri priima du int tipo kintamuosius. Funkcija gražina skaičių sandaugą.; Gautą reikšmę atspausdinkite.
-
 def make_sandauga(sk_1, sk_2):
     return int(sk_1) * int(sk_2)
 sk_1 = "9"
@@ -127,7 +123,6 @@ eilute_masyvas(arr)
 print()
 
 # Sukurkite Funkciją kuri priima du int tipo kintamuosius, min ir max reikšmėms nustatyti ir sugeneruoja random int skaičių ir jį gražintų.
-
 def sugeneruoti_random(min_value, max_value):
     return random.randint(min_value, max_value)
 min_value = 4
@@ -136,7 +131,6 @@ random_sk = sugeneruoti_random(min_value, max_value)
 print(random_sk)
 
 # Sukurkite Funkciją kuri sugeneruotų random int skaičių masyvą ir jį gražintų. Funkcija priima tris int tipo kintamuosius, min, max ir length reikšmėms nustatyti.
-
 def sugeneruoti_random_1(min_value_1, max_value_1, length):
     random_skaiciai = []
     for sk_3 in range(length):
@@ -150,3 +144,55 @@ random_sk_1 = sugeneruoti_random_1(min_value_1, max_value_1, length)
 print(random_sk_1)
 
 # Sukurkite Funkciją kuri panaudotų 6toje užduotyje sugeneruotą masyvą (priimtų kaip kintamąjį), susumuotų ir gražintų reikšmę
+kintamasis_7 = sum(random_sk_1)
+def kintamas_masyvas(kintamasis_7):
+    for sk_7 in kintamasis_7:
+        kintamasis_7 = random_sk_1
+        kintamasis_7.append(int(sk_7))
+print(kintamasis_7)
+
+# Sukurkite Funkciją kuri priimtų 6toje užduotyje sugeneruotą masyvą ir gražintų jos skaičių vidurkį (double).
+kintamasis_8 = sum(random_sk_1)/ len(random_sk_1)
+def vidurkis(kintamasis_8):
+    for sk_8 in kintamasis_8:
+        kintamasis_8 = random_sk_1
+        kintamasis_8.append(int(sk_8))
+print(kintamasis_8)
+
+# Sukurkite Funkciją kuri priimtų du int skaičius ir atspausdintų stačiakampį užpildytą žvaigždutėmis. Pirmas int - išoriniam ciklui, antras vidiniam.
+def staciakampis(x, y):
+    for i in range(x):
+        for j in range(y):
+            print('*', end='')
+        print()
+x = 4
+y = 3
+staciakampis(x, y)
+
+# Sukurkite Funkciją kuri priimtų sakinį kaip kintamąjį ir atspausdintų kiek jame yra raidžių(simbolių) ir tarpų. Sakinys - “Šiandien labai graži diena”. (kodas turi veikti padavus bet kokį sakinį) (simboliu yra 23, tarpu yra 3)
+def skaiciuoti_raides_ir_tarpus(sakinys):
+    raides = 0
+    tarpai = 0
+    for simbolis in sakinys:
+        if simbolis.isalpha():
+            raides += 1
+        elif simbolis == " ":
+            tarpai += 1
+    return raides, tarpai
+sakinys = "Šiandien labai graži diena"
+raides, tarpai = skaiciuoti_raides_ir_tarpus(sakinys)
+print(f"Raidžių skaičius: {raides}")
+print(f"Tarpų skaičius: {tarpai}")
+
+# Sukurkite Funkciją kuri priimtų sakinį, jį užkoduotų ir grąžintų. Kodavimas - sakinį apsukame iš kitos pusės. Pvz “Naglis” turi gautis “silgaN”.
+def sakinys_atbulai(sakinys):
+    return sakinys [::-1]
+uzkoduotas_sakinys = sakinys_atbulai(sakinys)
+print(uzkoduotas_sakinys)
+
+# Parašykite funkciją, kurios argumentas būtų tekstas, kuris būtų atspausdinamas konsolėje pridedant “---” pradžioje ir gale. PVZ (---labas---)
+tekstas = "labas"
+def konsoleje(tekstas):
+
+    print(f'---{tekstas}---')
+konsoleje(tekstas)
