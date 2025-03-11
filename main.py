@@ -143,7 +143,6 @@ def sugeneruoti_random_1(min_value_1, max_value_1, length):
 min_value_1 = 2
 max_value_1 = 20
 length = 4
-
 random_sk_1 = sugeneruoti_random_1(min_value_1, max_value_1, length)
 print(random_sk_1)
 
@@ -153,6 +152,7 @@ def kintamas_masyvas(kintamasis_7):
     for sk_7 in kintamasis_7:
         kintamasis_7 = random_sk_1
         kintamasis_7.append(int(sk_7))
+    return(kintamasis_7)
 print(kintamasis_7)
 
 # Sukurkite Funkciją kuri priimtų 6toje užduotyje sugeneruotą masyvą ir gražintų jos skaičių vidurkį (double).
@@ -161,6 +161,7 @@ def vidurkis(kintamasis_8):
     for sk_8 in kintamasis_8:
         kintamasis_8 = random_sk_1
         kintamasis_8.append(int(sk_8))
+    return(kintamasis_8)
 print(kintamasis_8)
 
 # Sukurkite Funkciją kuri priimtų du int skaičius ir atspausdintų stačiakampį užpildytą žvaigždutėmis. Pirmas int - išoriniam ciklui, antras vidiniam.
@@ -174,6 +175,7 @@ y = 3
 staciakampis(x, y)
 
 # Sukurkite Funkciją kuri priimtų sakinį kaip kintamąjį ir atspausdintų kiek jame yra raidžių(simbolių) ir tarpų. Sakinys - “Šiandien labai graži diena”. (kodas turi veikti padavus bet kokį sakinį) (simboliu yra 23, tarpu yra 3)
+sakinys = "Šiandien labai graži diena"
 def skaiciuoti_raides_ir_tarpus(sakinys):
     raides = 0
     tarpai = 0
@@ -183,7 +185,6 @@ def skaiciuoti_raides_ir_tarpus(sakinys):
         elif simbolis == " ":
             tarpai += 1
     return raides, tarpai
-sakinys = "Šiandien labai graži diena"
 raides, tarpai = skaiciuoti_raides_ir_tarpus(sakinys)
 print(f"Raidžių skaičius: {raides}")
 print(f"Tarpų skaičius: {tarpai}")
@@ -203,8 +204,6 @@ konsoleje(tekstas)
 # Sugeneruokite atsitiktinį stringą iš raidžių ir skaičių (10 simbolių). Atspausdinkite simbolius stulpeliu. Jei tai skaičius apgaubkite “ [ 7 ]”. Jei skaičiai eina keli iš eilės, apgaubkite juos kartu. [75]. (apačioje yra funkcija, ją nusikopijuokite ir paleiskite, ji sugeneruos stringą, su kuriuo dirbsite)
 import random
 import re
-
-# Funkcija atsitiktinio stringo generavimui
 def generateRndStr(length):
     symbols = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234567890"
     text = ""
@@ -233,3 +232,15 @@ while i < len(uzkoduotas_stringas):
     else:
         print(uzkoduotas_stringas[i])  # Spausdiname simbolį
     i += 1
+
+# Parašykite funkciją, kuri skaičiuotų, ir gražintų iš kiek sveikų skaičių jos argumentas dalijasi be liekanos (išskyrus vienetą ir patį save). Pvz padavus 10 turi grąžinti 2,  o padavus 20 gražintų 3.
+def skaiciuoti_daliklius(n):
+    dalikliai = 0
+    for i in range(2, n):
+        if n % i == 0:
+            dalikliai += 1
+    return dalikliai
+print(skaiciuoti_daliklius(10))
+print(skaiciuoti_daliklius(20)) # dalinasi is 2,4,5,10 = 4
+
+
