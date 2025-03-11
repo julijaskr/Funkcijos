@@ -267,3 +267,29 @@ print(dalikliu_skaicius)
 
 dalikliu_skaicius.sort(reverse=True)
 print(dalikliu_skaicius)
+
+# Sugeneruokite masyvą iš 100 elementų, kurio reikšmės atsitiktiniai skaičiai nuo 333 iki 777. Naudodami 3 uždavinio funkciją iš masyvo suskaičiuokite kiek yra pirminių skaičių.
+def atsitiktiniu_sk_kurimas():
+    atsitiktiniai_skaiciai = []
+    for i in range(9):
+        atsitiktiniai_skaiciai.append(random.randint(333, 777))
+    return atsitiktiniai_skaiciai
+
+def pirminiai(n):
+    if n < 2:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
+
+atsitiktiniai_skaiciai = atsitiktiniu_sk_kurimas()
+pirminiai_sk= 0
+pirminiai_skaiciai = []
+for x in atsitiktiniai_skaiciai:
+    if pirminiai (x):
+        pirminiai_sk += 1
+        pirminiai_skaiciai.append(x)
+print(atsitiktiniai_skaiciai)
+print(pirminiai_skaiciai)
+print((pirminiai_sk))
