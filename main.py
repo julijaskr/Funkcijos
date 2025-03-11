@@ -240,7 +240,30 @@ def skaiciuoti_daliklius(n):
         if n % i == 0:
             dalikliai += 1
     return dalikliai
+
 print(skaiciuoti_daliklius(10))
-print(skaiciuoti_daliklius(20)) # dalinasi is 2,4,5,10 = 4
+print(skaiciuoti_daliklius(74)) # dalinasi is 2,4,5,10 = 4
+print("=============")
+# Sugeneruokite masyvą iš 100 elementų, kurio reikšmės atsitiktiniai skaičiai nuo 33 iki 77. Išrūšiuokite masyvą pagal daliklių be liekanos kiekį mažėjimo tvarka, panaudodami trečio uždavinio funkciją.
+def atsitiktiniu_sk_kurimas():
+    atsitiktiniai_skaiciai = []
+    for i in range(100):
+        atsitiktiniai_skaiciai.append(random.randint(33, 77))
+    return atsitiktiniai_skaiciai
 
+def count_divisors(n):
+    dalikliai = 0
+    for i in range(2, n):
+        if n % i == 0:
+            dalikliai += 1
+    return dalikliai
 
+atsitiktiniai_skaiciai = atsitiktiniu_sk_kurimas()
+print(atsitiktiniai_skaiciai)
+dalikliu_skaicius = []
+for x in atsitiktiniai_skaiciai:
+    dalikliu_skaicius.append(count_divisors(x))
+print(dalikliu_skaicius)
+
+dalikliu_skaicius.sort(reverse=True)
+print(dalikliu_skaicius)
